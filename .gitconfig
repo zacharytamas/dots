@@ -1,0 +1,31 @@
+# This is Git's per-user configuration file.
+
+[user]
+  name = Zachary Jones
+  email = zachary@jones.cx
+
+[fetch]
+  prune = true
+
+[diff]
+  algorithm = histogram
+
+[color]
+  ui = auto
+
+[url "https://github.com/"]
+  insteadOf = gh:
+
+# Thorough ####################################################################
+
+[url "https://github.com/thorough-dev/"]
+  insteadOf = thor:
+[includeIf "gitdir:thorough-dev/"]
+  path = "~/.config/gitconfig/thorough"
+
+# Aliases #####################################################################
+
+[alias]
+  co = checkout
+  ci = commit
+  fixup = commit --fixup
