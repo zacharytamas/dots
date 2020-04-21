@@ -27,3 +27,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias dot='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias git='hub'
+alias code='code-insiders'
