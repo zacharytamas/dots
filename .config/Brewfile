@@ -1,0 +1,34 @@
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# Good-lookin' diffs with diff-highlight and more
+brew "diff-so-fancy"
+
+# User-friendly command-line shell for UNIX-like operating systems
+brew "fish"
+
+# Distributed revision control system
+brew "git"
+
+# Rebase alternative for easy & efficient in-memory rebases and fixups
+brew "git-revise"
+
+# Add GitHub support to git on the command-line
+brew "hub"
+
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+
+# Internet file retriever
+brew "wget"
+
+cask "alfred"
+cask "amethyst"
+cask "font-jetbrains-mono"
+cask "iterm2"
