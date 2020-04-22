@@ -5,7 +5,6 @@ if not functions -q fisher
 end
 
 set -x PATH $HOME/bin /usr/local/bin $PATH
-set -x PATH $HOME/bin /usr/local/bin $PATH
 
 set HERE (dirname (status --current-filename))
 
