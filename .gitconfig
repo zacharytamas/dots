@@ -2,6 +2,9 @@
   name = Zachary Jones
   email = zachary@jones.cx
 
+[core]
+  editor = nvim
+
 [fetch]
   prune = true
 
