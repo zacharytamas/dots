@@ -7,7 +7,9 @@ alias fishconfig="code ~/.config/fish"
 
 alias dot='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
-alias lg='lazygit'
+test -x (which lazygit); and alias lgit="lazygit"
+test -x (which lazydocker); and alias ldocker="lazydocker"
+test -x (which lazynpm); and alias lnpm="lazynpm"
 
 ################################################################################
 # Vim
