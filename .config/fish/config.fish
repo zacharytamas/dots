@@ -11,3 +11,7 @@ set HERE (dirname (status --current-filename))
 for file in $HERE/preferences/*.fish
   source $file
 end
+
+# Load [asdf](https://asdf-vm.com/) for automatic environments
+test -f ~/.asdf/asdf.fish; and source ~/.asdf/asdf.fish
+test -f /usr/local/opt/asdf/asdf.fish; and source /usr/local/opt/asdf/asdf.fish
