@@ -6,7 +6,7 @@ git:
     useConfig: true
 
 services:
-  "git.sqcorp.co": "bitbucket:git.sqcorp.co"
+  "git@git.sqcorp.co": "bitbucket:git.sqcorp.co"
 
 os:
   openCommand: 'code-insiders -r {{filename}}'
