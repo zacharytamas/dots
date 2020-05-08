@@ -1,5 +1,7 @@
 " vim:fdm=marker
 
+source ~/.config/nvim/plugins.vim
+
 " Don't show the previous command executed
 set noshowcmd
 
@@ -40,3 +42,9 @@ noremap -       <PageUp>
 
 set showtabline=2 noshowmode
 set autoindent
+
+" Automatically resize splits when resizing window
+autocmd VimResized * wincmd =
+
+" Don't use swap files, etc. It's annoying to reconcile later.
+set noswapfile nobackup nowb
