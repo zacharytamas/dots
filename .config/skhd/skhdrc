@@ -1,3 +1,5 @@
 
 # Flip tree horizontally (as displayed)
 shift + alt - return : yabai -m space --mirror y-axis
+
+shift + alt - 0 : yabai -m space --balance
