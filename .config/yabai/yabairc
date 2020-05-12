@@ -19,27 +19,46 @@ yabai -m config split_ratio                  0.50
 
 # automations -----------------------------------------------------------------
 
-# float system preferences
-yabai -m rule --add app="^System Preferences\$" manage=off grid=4:4:1:1:2:2
+  # float system preferences
+  yabai -m rule --add app="^System Preferences\$" manage=off grid=4:4:1:1:2:2
 
-# grid=<rows>:<cols>:<start-x>:<start-y>:<width>:<height>
-set FOCUS_GRID "1:6:1:0:4:1"
-
-set COMMUNICATION_APPS "^(Slack|Messages|Music|Spark)\$" 
-
-if test (hostname) = "emmet"
-  echo "Setting up Emmet-specific yabai"
-
-  # Emmet has a 27" display so it can be a little more spacious.
+  # grid=<rows>:<cols>:<start-x>:<start-y>:<width>:<height>
   set FOCUS_GRID "1:6:1:0:4:1"
 
-  set FOCUS_SPACE_INDEX 3
-end
+  # define sets of applications that should be handled similarly
 
-yabai -m space $FOCUS_SPACE_INDEX --label space_focus
+    set COMMUNICATION_APPS "Slack|Messages|Music|Spark" 
+    set FOCUS_APPS "$COMMUNICATION_APPS|Timing"
+    echo $FOCUS_APPS
 
-yabai -m rule --add label="single-task-focus" \
-  manage=off app=$COMMUNICATION_APPS grid=$FOCUS_GRID
+  # tweak settings on a per-host basis because my machines have different 
+  # numbers of screens and sizes
 
-yabai -m rule --add label="move-window-to-focus-space" \
-  app=$COMMUNICATION_APPS space=^space_focus
+  if test (hostname) = "emmet"
+    echo "Setting up Emmet-specific yabai"
+
+    # Emmet has a 27" display so it can be a little more spacious.
+    set FOCUS_GRID "1:1:1:1:1:1"
+
+    set FOCUS_SPACE_INDEX 3
+    set FOCUS_SPACE_PADDING "abs:64:64:256:256"
+  end
+
+  # setup the focus space, which is just a dedicated space that floats all windows
+  # on top of each other as a certain size such that only one window can be seen
+  # at once and it takes up the majority of the screen
+
+    yabai -m space $FOCUS_SPACE_INDEX --label space_focus
+    yabai -m space $FOCUS_SPACE_INDEX --padding $FOCUS_SPACE_PADDING
+    yabai -m space $FOCUS_SPACE_INDEX --layout float
+
+  # automatically size certain windows
+
+  yabai -m rule --add label="single-task-focus" \
+    manage=off app=$FOCUS_APPS grid=$FOCUS_GRID
+
+  # move certain app windows to the focus space when they are created
+  
+    yabai -m rule --add label="move-window-to-focus-space" \
+      app=$FOCUS_APPS space=^space_focus
+
