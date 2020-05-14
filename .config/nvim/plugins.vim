@@ -21,6 +21,10 @@ Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-surround'
+Plug 'ryanoasis/vim-devicons'
+
+" Status Line
+Plug 'vim-airline/vim-airline'
 
 " Colorscheme
 "   (obviously I'm a bit indecisive)
@@ -32,6 +36,7 @@ Plug 'nightsense/snow'
 Plug 'challenger-deep-theme/vim'
 Plug 'whatyouhide/vim-gotham'
 Plug 'rakr/vim-two-firewatch'
+Plug 'christianchiarulli/onedark.vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'
@@ -39,3 +44,9 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Initialize plugin system
 call plug#end()
+
+" Automatically install missing plugins on startup
+autocmd VimEnter *
+  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \|   PlugInstall --sync | q
+  \| endif
