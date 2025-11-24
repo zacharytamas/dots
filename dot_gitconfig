@@ -3,7 +3,7 @@
 
 [user]
   name = Zachary
-  email = zachary@wkt.ca
+  email = zachary@tamas.sh
 
 [diff]
   algorithm = minimal
