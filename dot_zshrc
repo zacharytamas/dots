@@ -1,0 +1,46 @@
+eval "$(fzf --zsh)"
+eval "$(zoxide init zsh)"
+
+HISTFILE=$HOME/.zhistory
+SAVEHIST=1000
+HISTSIZE=999
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_verify
+setopt share_history
+
+# completion using arrow keys (based on history)
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
+
+# bun
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun" 
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="nvim"
+export VISUAL="cursor --wait"
+
+# paths
+export PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+export PATH="$(yarn global bin):$PATH"
+export PATH="$HOME/.local/share/uv/python/cpython-3.11.14-macos-aarch64-none/bin:$PATH"
+
+# completions
+source <(git machete completion zsh)
+
+# aliases
+alias ls="eza --icons=always --hyperlink"
+
+# helper functions
+pyclean () {
+    find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
+}
+
+eval "$(starship init zsh)"
+# Added by Antigravity
+export PATH="/Users/zacharyjones/.antigravity/antigravity/bin:$PATH"
+
+# bun completions
+[ -s "/Users/zacharyjones/.bun/_bun" ] && source "/Users/zacharyjones/.bun/_bun"
