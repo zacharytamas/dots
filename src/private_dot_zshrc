@@ -1,3 +1,5 @@
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 eval "$(fzf --zsh)"
 eval "$(zoxide init zsh)"
 
@@ -12,6 +14,9 @@ setopt share_history
 # completion using arrow keys (based on history)
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # bun
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
@@ -45,4 +50,14 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 # bun completions
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-alias loadenv='set -a && source .env && set +a'
+alias da="eval \"(devtree activate)\""
+# >>> MCP Agent Mail bd path /opt/homebrew/bin
+if [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
+  export PATH="/opt/homebrew/bin:$PATH"
+fi
+# <<< MCP Agent Mail bd path
+
+# >>> MCP Agent Mail alias
+alias am='cd "/Users/zacharyjones/Development/github.com/Dicklesworthstone/mcp_agent_mail" && scripts/run_server_with_token.sh'
+# <<< MCP Agent Mail alias
+
