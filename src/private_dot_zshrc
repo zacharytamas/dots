@@ -51,13 +51,5 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 alias da="eval \"(devtree activate)\""
-# >>> MCP Agent Mail bd path /opt/homebrew/bin
-if [[ ":$PATH:" != *":/opt/homebrew/bin:"* ]]; then
-  export PATH="/opt/homebrew/bin:$PATH"
-fi
-# <<< MCP Agent Mail bd path
 
-# >>> MCP Agent Mail alias
-alias am='cd "/Users/zacharyjones/Development/github.com/Dicklesworthstone/mcp_agent_mail" && scripts/run_server_with_token.sh'
-# <<< MCP Agent Mail alias
-
+alias loadenv='set -a && source .env && set +a'
