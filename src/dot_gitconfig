@@ -6,7 +6,7 @@
   email = zachary@tamas.sh
 
 [diff]
-  algorithm = minimal
+  algorithm = histogram
 
 [rebase]
   updaterefs = true
@@ -15,10 +15,27 @@
   rebase = true
 
 [credential "https://github.com"]
+  helper = 
   helper = !/opt/homebrew/bin/gh auth git-credential
 [credential "https://gist.github.com"]
+  helper = 
   helper = !/opt/homebrew/bin/gh auth git-credential
 
 [machete "status"]
   extraSpaceBeforeBranchName = true
 
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --label \"$(pwd)\" --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+  prompt = false
+  trustExitCode = true
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+
+[diff]
+  tool = Kaleidoscope
+
+[merge]
+  tool = Kaleidoscope
