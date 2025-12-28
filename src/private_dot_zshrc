@@ -53,3 +53,5 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 alias da="eval \"(devtree activate)\""
 
 alias loadenv='set -a && source .env && set +a'
+
+alias oc_config='cursor ~/.config/opencode'
