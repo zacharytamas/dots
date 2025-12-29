@@ -1,0 +1,12 @@
+version: "0.2"
+ignorePaths: []
+dictionaryDefinitions: []
+dictionaries: []
+words:
+  - devicons
+  - keymap
+  - neotree
+  - nvim
+  - Tanjim
+ignoreWords: []
+import: []
