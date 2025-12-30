@@ -6,7 +6,9 @@
     // "@tarquinen/opencode-dcp@latest",
     "file:///Users/zacharyjones/Development/github.com/zacharytamas/silo"
   ],
-  "experimental": {},
+  "experimental": {
+    "batch_tool": true
+  },
   "instructions": ["AGENTS.md"],
   "tui": {
     "scroll_acceleration": { "enabled": true },
