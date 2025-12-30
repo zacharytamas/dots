@@ -43,7 +43,6 @@ pyclean () {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
-eval "$(starship init zsh)"
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
@@ -58,3 +57,5 @@ alias oc_config='cursor ~/.config/opencode'
 
 export WARP_API_TOKEN="{{onepasswordRead "op://Private/Warp/credential"}}"
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=1
+
+eval "$(starship init zsh)"

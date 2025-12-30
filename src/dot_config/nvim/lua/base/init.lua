@@ -1,9 +1,9 @@
 vim.g.mapleader = " " -- Set leader key before Lazy
- 
+
 require("base.init_lazy")
 
-vim.cmd("set nu")                 -- set line numbers -- set line numbers
-vim.cmd("set relativenumber")     -- use relative line numbers
+vim.cmd("set nu")             -- set line numbers -- set line numbers
+vim.cmd("set relativenumber") -- use relative line numbers
 
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
