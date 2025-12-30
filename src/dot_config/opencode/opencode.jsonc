@@ -9,7 +9,8 @@
   "experimental": {},
   "instructions": ["AGENTS.md"],
   "tui": {
-    "scroll_acceleration": { "enabled": true }
+    "scroll_acceleration": { "enabled": true },
+    "scroll_speed": 1
   },
   "tools": { "beads": false },
   "model": "anthropic/claude-opus-4-5",
@@ -23,15 +24,7 @@
     "fetch": {
       "type": "local",
       "command": ["uvx", "mcp-server-fetch"]
-    },
-    // "morph": {
-    //   "type": "local",
-    //   "command": ["bunx", "@morphllm/morphmcp"],
-    //   "environment": {
-    //     "MORPH_API_KEY": "{env:MORPH_API_KEY}",
-    //     "ENABLED_TOOLS": "warpgrep_codebase_search"
-    //   }
-    // }
+    }
   },
   "formatter": {
     "ruff": {
