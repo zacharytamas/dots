@@ -6,13 +6,15 @@
     // "@tarquinen/opencode-dcp@latest",
     "file:///Users/zacharyjones/Development/github.com/zacharytamas/silo"
   ],
-  "experimental": {},
+  "experimental": {
+    
+  },
   "instructions": ["AGENTS.md"],
   "tui": {
     "scroll_acceleration": { "enabled": true },
     "scroll_speed": 1
   },
-  "tools": { "beads": false },
+  "tools": { "beads": false, "lsp": true },
   "model": "anthropic/claude-opus-4-5",
   "small_model": "anthropic/claude-haiku-4-5",
   "mcp": {
