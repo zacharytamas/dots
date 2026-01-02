@@ -1,0 +1,6 @@
+{
+	"cli": {
+		"enabled": ["codex"],
+		"codex": { "model": "gpt-5.2" }
+	}
+}
