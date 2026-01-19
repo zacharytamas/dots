@@ -43,6 +43,10 @@ pyclean () {
     find . -type f -name '*.py[co]' -delete -o -type d -name __pycache__ -delete
 }
 
+{{ if eq .chezmoi.os "darwin" }}
+alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+{{ end }}
+
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
