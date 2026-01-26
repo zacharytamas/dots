@@ -35,6 +35,7 @@ export CASS_DATA_DIR="$HOME/.config/cass"
 
 # completions
 source <(git machete completion zsh)
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
 
 # aliases
 alias ls="eza --icons=always --hyperlink"
@@ -51,9 +52,6 @@ alias flush_dns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
 alias da="eval \"\$(devtree activate)\""
 
 alias loadenv='set -a && source .env && set +a'
@@ -68,5 +66,5 @@ export JIRA_API_TOKEN="{{onepasswordRead "op://Private/Atlassian PAT/credential"
 {{- end }}
 
 eval "$(starship init zsh)"
+eval "$(mise activate zsh)"
 
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
