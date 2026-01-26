@@ -61,6 +61,9 @@ alias oc_config='cursor ~/.config/opencode'
 export WARP_API_TOKEN="{{onepasswordRead "op://Private/Warp/credential"}}"
 export OPENCODE_EXPERIMENTAL_LSP_TOOL=1
 
+# Continuous-Claude OPC directory (for skills to find scripts)
+export CLAUDE_OPC_DIR="$HOME/Development/github.com/parcadei/Continuous-Claude-v3/opc"
+
 {{- if eq .chezmoi.hostname "WKT-MAC-0110" }}
 export JIRA_API_TOKEN="{{onepasswordRead "op://Private/Atlassian PAT/credential"}}"
 {{- end }}
